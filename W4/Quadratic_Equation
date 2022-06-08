@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+
+
+int main(){
+    int x;
+
+    do{
+
+        int a;
+        int b;
+        int c;
+        int d;
+        double x2;
+
+        cout << "a >> b >> c \n";
+        cin >> a >> b >> c;
+        
+        if (a == 0){
+
+        }
+        else {
+            d = b * b - 4 * a * c; 
+            quadratic_equation_solution(d, b, a);
+
+        }
+        cout << "Please enter your choice \n";
+        cout << "1 - To solve a quadratic equations \n";
+        cout << "Anything else to exit \n";
+        cin >> x;  
+    } while (x == 1);
+
+    cout << "Bye! \n";
+    return 0; 
+
+}
