@@ -1,1 +1,48 @@
+#include <iostream>
 
+using namespace std;
+
+
+int main(){
+
+int choice;
+int product;
+
+do {
+cout << "\n";
+cout << "Check Digit Calculator \n";
+cout <<"-------------------------- \n";
+cout << "1. EAN-8 \n";
+cout << "2. UPC-A \n";
+cout << "3. EAN-13 \n";
+cout << "4. EAN-14 \n";
+cout << "5. SSCC \n";
+cout << "-------------------------- \n";
+cout << "Chose your product code type: ";
+cin >> choice;
+cout << endl;
+cout << "Enter first 11 digits of your product code: ";
+cin >> product;
+cout << endl;
+cout <<"----------------------- \n";
+cout << "The check digit is ", choice;
+cout << "\n";
+cout << "The product code is ", product;
+
+switch (choice)
+{
+case 1:
+//code 
+break;
+case 2:
+//sadasd
+break;
+default:
+cout << "Not a Valid Choice. \n"
+<< "Choose again.\n";
+break;
+}
+
+}while (choice !=6);
+return 0;
+}
