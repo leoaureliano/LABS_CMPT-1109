@@ -3,7 +3,36 @@
 
 using namespace std;
 
+void linear_equation_solution(int b)
+{
+    double x1;
+    if (b == 0)
+    {
+        cout << "a = 0 \n";
+        cout << "b = 0\n";
+        cout << "Bye!\n";
+    }
+    else
+    {
+            x1 = - c / b;
 
+            cout << "x1 = " << x1 << endl;
+    } 
+}
+
+void quadratic_equation_solution (int d, int a, int b){
+    double x1, x2;
+    if (d < 0){
+        cout << "No real roots \n";
+    }
+    else{
+
+        x1 = (-1 * b + sqrt(d)) / (2 * a);
+        x2 = (-1 * b - sqrt(d)) / (2 * a);
+        cout << "x1 " << x1 << endl;
+        cout << "x2 " << x2 << endl;
+    }
+}
 
 int main(){
     int x;
@@ -20,7 +49,8 @@ int main(){
         cin >> a >> b >> c;
         
         if (a == 0){
-
+            cout << "Not quadratic \n";
+            linear_equation_solution(b);
         }
         else {
             d = b * b - 4 * a * c; 
