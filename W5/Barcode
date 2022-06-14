@@ -3,6 +3,7 @@
 using namespace std;
 
 
+
 int main(){
 
 int choice;
@@ -29,6 +30,7 @@ cout <<"----------------------- \n";
 cout << "The check digit is ", choice;
 cout << "\n";
 cout << "The product code is ", product;
+int  digit_check = product;
 
 switch (choice)
 {
@@ -58,11 +60,12 @@ cout << product;
 break; 
 
 default:
-cout << "Not a Valid Choice. \n"
-<< "Choose again.\n";
+cout << endl;
+cout << "Not a Valid Choice. \n";
+cout << "Choose again.\n";
 break;
 }
 
-}while (choice !=5);
+}while (choice >= 5);
 return 0;
 }
