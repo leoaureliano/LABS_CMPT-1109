@@ -18,6 +18,7 @@ cout << "3. EAN-13 \n";
 cout << "4. EAN-14 \n";
 cout << "5. SSCC \n";
 cout << "-------------------------- \n";
+
 cout << "Chose your product code type: ";
 cin >> choice;
 cout << endl;
@@ -32,17 +33,36 @@ cout << "The product code is ", product;
 switch (choice)
 {
 case 1:
-//code 
+//EAN-8
+cout << product;
 break;
+
 case 2:
-//sadasd
+//UPC-A
+cout << product;
 break;
+
+case 3:
+//EAN - 13
+cout << product;
+break;
+
+case 4:
+// EAN-14
+cout << product;
+break;
+
+case 5:
+// SSCC
+cout << product;
+break; 
+
 default:
 cout << "Not a Valid Choice. \n"
 << "Choose again.\n";
 break;
 }
 
-}while (choice !=6);
+}while (choice !=5);
 return 0;
 }
