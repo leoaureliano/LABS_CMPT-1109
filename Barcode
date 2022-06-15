@@ -1,4 +1,5 @@
 #include <iostream>
+#define MAX_DIGITS 16
 
 using namespace std;
 
@@ -13,16 +14,16 @@ int compute_check_digit(int arr[], int size){
     
     //Second step
     sum*=2;
-    cout << "value",cont;
+    cout << cont;
     cout <<endl;
     cout << cont;
-    };
-    
+    }
+    return 0;
 }
     //third step
     
     
-    //fourthstep
+    //fourth step
     
     
     
@@ -31,8 +32,8 @@ int main(){
 
 int choice;
 int product;
+int check_digit;
 
-do {
 cout << "\n";
 cout << "Check Digit Calculator \n";
 cout <<"-------------------------- \n";
@@ -49,54 +50,39 @@ cout << endl;
 cout << "Enter first 11 digits of your product code: ";
 cin >> product;
 cout << endl;
-int  digit_check = product;
 cout <<"----------------------- \n";
-cout << "The check digit is ", choice;
+cout << "The check digit is ";
 cout << "\n";
-cout << "The product code is ", product;
-int arr[16] = product;
-//fix this
-int size = 8;
-switch (choice)
-{
-case 1:
-//EAN-8
-cout << "check";
-cout << compute_check_digit(16, 8);
-cout << "size";
+cout << "The product code is ";
 cout << product;
-break;
+cout << endl;
+//fix this
 
-case 2:
+if (choice == 1)
+{
+//EAN-8
+int size = 8;
+char num_char[MAX_DIGITS + sizeof(char)];
+sprintf(num_char, "%d", product);
+printf("num_char: %s \n", num_char);
+
+int arr[] = {
+    num_char
+};
+cout << arr;
+cout << "check \n";
+cout << compute_check_digit(arr, 8);
+cout << "----------";
+cout << "size \n";
+cout << product;
+}
+    
+if (choice == 2){
 //UPC-A
 cout << product;
-break;
-
-case 3:
-//EAN - 13
-
-cout << product;
-break;
-
-case 4:
-// EAN-14
-
-cout << product;
-break;
-
-case 5:
-// SSCC
-
-cout << product;
-break; 
-
-default:
+    }
 cout << endl;
-cout << "Not a Valid Choice. \n";
-cout << "Choose again.\n";
-break;
-}
-
-}while (choice >= 5);
 return 0;
 }
+
+
