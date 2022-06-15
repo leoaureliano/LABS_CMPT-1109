@@ -2,7 +2,31 @@
 
 using namespace std;
 
-
+int compute_check_digit(int arr[], int size){
+    
+    int check_digit;
+    int cont = 0;
+    int sum = 0;
+    //first step
+    for (int i = size - 1; i >= 0 ; i = i - 2 ){
+        cont += arr[i];
+    
+    //Second step
+    sum*=2;
+    cout << "value",cont;
+    cout <<endl;
+    cout << cont;
+    };
+    
+}
+    //third step
+    
+    
+    //fourthstep
+    
+    
+    
+    
 int main(){
 
 int choice;
@@ -18,31 +42,61 @@ cout << "3. EAN-13 \n";
 cout << "4. EAN-14 \n";
 cout << "5. SSCC \n";
 cout << "-------------------------- \n";
+
 cout << "Chose your product code type: ";
 cin >> choice;
 cout << endl;
 cout << "Enter first 11 digits of your product code: ";
 cin >> product;
 cout << endl;
+int  digit_check = product;
 cout <<"----------------------- \n";
 cout << "The check digit is ", choice;
 cout << "\n";
 cout << "The product code is ", product;
-
+int arr[16] = product;
+//fix this
+int size = 8;
 switch (choice)
 {
 case 1:
-//code 
+//EAN-8
+cout << "check";
+cout << compute_check_digit(16, 8);
+cout << "size";
+cout << product;
 break;
+
 case 2:
-//sadasd
+//UPC-A
+cout << product;
 break;
+
+case 3:
+//EAN - 13
+
+cout << product;
+break;
+
+case 4:
+// EAN-14
+
+cout << product;
+break;
+
+case 5:
+// SSCC
+
+cout << product;
+break; 
+
 default:
-cout << "Not a Valid Choice. \n"
-<< "Choose again.\n";
+cout << endl;
+cout << "Not a Valid Choice. \n";
+cout << "Choose again.\n";
 break;
 }
 
-}while (choice !=6);
+}while (choice >= 5);
 return 0;
 }
