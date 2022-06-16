@@ -1,0 +1,109 @@
+//First
+Check Digit Calculator 
+-------------------------- 
+1. EAN-8 
+2. UPC-A 
+3. EAN-13 
+4. ITF-14 
+5. SSCC 
+-------------------------- 
+Chose your product code type: 3
+
+Enter first 12 digits of your product code: 
+2
+7
+8
+3
+4
+6
+2
+3
+7
+4
+6
+4
+-------------------- 
+The check digit is 0
+The product code is 2783462374640
+
+
+//Second 
+Check Digit Calculator 
+-------------------------- 
+1. EAN-8 
+2. UPC-A 
+3. EAN-13 
+4. ITF-14 
+5. SSCC 
+-------------------------- 
+Chose your product code type: 1
+
+Enter first 7 digits of your product code: 
+2
+3
+4
+3
+1
+4
+2
+-------------------- 
+The check digit is 3
+The product code is 23431423
+
+
+//Third
+Check Digit Calculator 
+-------------------------- 
+1. EAN-8 
+2. UPC-A 
+3. EAN-13 
+4. ITF-14 
+5. SSCC 
+-------------------------- 
+Chose your product code type: 2
+
+Enter first 11 digits of your product code: 
+1
+2
+3
+1
+2
+3
+1
+6
+2
+3
+5
+-------------------- 
+The check digit is 3
+The product code is 123123162353
+
+
+// fourth
+Check Digit Calculator 
+-------------------------- 
+1. EAN-8 
+2. UPC-A 
+3. EAN-13 
+4. ITF-14 
+5. SSCC 
+-------------------------- 
+Chose your product code type: 4
+
+Enter first 13 digits of your product code: 
+1
+2
+3
+1
+2
+3
+7
+1
+2
+3
+6
+1
+8
+-------------------- 
+The check digit is 2
+The product code is 12312371236182
