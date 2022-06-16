@@ -1,11 +1,9 @@
 #include <iostream>
-#define MAX_DIGITS 16
 
 using namespace std;
 
 int compute_check_digit(int arr[], int size){
     
-    int check_digit;
     int cont = 0;
     int sum = 0;
     //first step
@@ -13,26 +11,22 @@ int compute_check_digit(int arr[], int size){
         cont += arr[i];
     
     //Second step
-    sum*=2;
-    cout << cont;
-    cout <<endl;
-    cout << cont;
+    sum*=3;
     }
-    return 0;
+cout << cont;
+cout <<endl;
+    
+return 0;
 }
     //third step
     
     
     //fourth step
     
-    
-    
-    
 int main(){
 
 int choice;
 int product;
-int check_digit;
 
 cout << "\n";
 cout << "Check Digit Calculator \n";
@@ -43,46 +37,50 @@ cout << "3. EAN-13 \n";
 cout << "4. EAN-14 \n";
 cout << "5. SSCC \n";
 cout << "-------------------------- \n";
-
 cout << "Chose your product code type: ";
 cin >> choice;
 cout << endl;
-cout << "Enter first 11 digits of your product code: ";
-cin >> product;
-cout << endl;
-cout <<"----------------------- \n";
-cout << "The check digit is ";
-cout << "\n";
-cout << "The product code is ";
-cout << product;
-cout << endl;
-//fix this
-
-if (choice == 1)
-{
-//EAN-8
 int size = 8;
-char num_char[MAX_DIGITS + sizeof(char)];
-sprintf(num_char, "%d", product);
-printf("num_char: %s \n", num_char);
-
-int arr[] = {
-    num_char
-};
-cout << arr;
-cout << "check \n";
-cout << compute_check_digit(arr, 8);
-cout << "----------";
-cout << "size \n";
-cout << product;
+if (choice == 1){
+//EAN-8
 }
-    
 if (choice == 2){
 //UPC-A
-cout << product;
-    }
+    size++;
+}
+if (choice == 3){
+//EAN-13
+size = 13;
+}
+if (choice == 4){
+//EAN-14
+size = 14;
+}
+if (choice == 5){
+//SSCC
+size = 18;
+}
+int arr[size];
+
+cout << "Enter first";
+cout << size;
+cout << "digits of your product code: ";
+cin >> product;
 cout << endl;
-return 0;
+//  store input from user to array
+for (int g = 0; g < size; g++) {
+  cin >> arr[g];
 }
 
+cout << "The numbers are: ";
 
+//  print array elements
+for (int h = 0; h < size; h++) {
+  cout << arr[h];
+}
+cout << endl;
+cout << compute_check_digit(arr, size);
+cout << endl;
+
+return 0;
+}
