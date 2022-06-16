@@ -5,22 +5,39 @@ using namespace std;
 int compute_check_digit(int arr[], int size){
     
     int cont = 0;
+    int cont2 = 2;
+    int check_digit;
     //first step
-    for (int i = size - 1; i >= 0 ; i = i - 2 ){
+    for (int i = size - 1; i >= 0; i = i - 2 ){
         cont += arr[i];
-    }
+    };
     //Second step
-cont*=3;
-cout << cont;
-cout <<endl;
+    cont*=3;
 
-return 0;
-}
+    for (int i = size - 2; i >= 0 ; i = i - 2 ){
+            cont2 += arr[i];
+    };
+    cout << cont2;
+    cout << cont;
+    cout <<endl;
+
+
     //third step
-    
+    for (int i = size - 2; i >= 0 ; i = i - 2 ){
+        cont2 += arr[i];
+};
     
     //fourth step
+    int cont3 = cont + cont2;
+    check_digit = 10 - (cont3 % 10);
     
+    
+    if(cont3 % 10 == 0)
+        check_digit = 0;
+    
+    return check_digit;
+    }
+
 int main(){
 
 int choice;
