@@ -7,34 +7,37 @@ int compute_check_digit(int arr[], int size){
     //math fuctions
     int cont = 0;
     int cont2 = 0;
-    int check_digit;
+    int check_digit = 0;
     //first step
     for (int i = size - 1; i >= 0; i = i - 2 ){
         cont += arr[i];
     };
+    
     //Second step
     cont*=3;
 
     for (int i = size - 2; i >= 0 ; i = i - 2 ){
             cont2 += arr[i];
     };
-
+    
     //third step
     for (int i = size - 2; i >= 0 ; i = i - 2 ){
         cont2 += arr[i];
 };
-    
+    cout << cont;
+    cout << endl;
+    cout << cont2;
     //fourth step
     int cont3 = cont + cont2;
     check_digit = 10 - (cont3 % 10);
     
     
-    if(cont3 % 10 == 0){
+    if(cont3 % 10 == 0)
         //special case
         check_digit = 0;
-    }
+    
     return check_digit;
-    }
+}
 
 int main(){
 //menu
@@ -52,25 +55,26 @@ cout << "-------------------------- \n";
 cout << "Chose your product code type: ";
 cin >> choice;
 cout << endl;
-int size = 8;
+int size = 6;
 if (choice == 1){
 //EAN-8
+    size = 7;
 }
 if (choice == 2){
 //UPC-A
-    size+=4;
+    size = 11;
 }
 if (choice == 3){
 //EAN-13
-size = 13;
+size = 12;
 }
 if (choice == 4){
 //EAN-14
-size = 14;
+size = 13;
 }
 if (choice == 5){
 //SSCC
-size = 18;
+size = 17;
 }
 int arr[size];
 
@@ -89,7 +93,6 @@ cout << "";
 for (int h = 0; h < size; h++) {
   cout << arr[h];
 }
-cout << endl;
 cout << compute_check_digit(arr, size);
 cout << endl;
 
