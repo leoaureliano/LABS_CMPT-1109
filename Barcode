@@ -1,32 +1,25 @@
 #include <iostream>
-#define MAX_DIGITS 18
 
 using namespace std;
 
 int compute_check_digit(int arr[], int size){
     //math fuctions
+    int inpu = 0;
     int cont = 0;
     int cont2 = 0;
     int check_digit = 0;
+    
     //first step
     for (int i = size - 1; i >= 0; i = i - 2 ){
-        cont += arr[i];
-    };
+        cont += arr[i];};
     
     //Second step
     cont*=3;
-
-    for (int i = size - 2; i >= 0 ; i = i - 2 ){
-            cont2 += arr[i];
-    };
-    
+    inpu +=1;
     //third step
     for (int i = size - 2; i >= 0 ; i = i - 2 ){
-        cont2 += arr[i];
-};
-    cout << cont;
-    cout << endl;
-    cout << cont2;
+        cont2 += arr[i];};
+
     //fourth step
     int cont3 = cont + cont2;
     check_digit = 10 - (cont3 % 10);
@@ -35,8 +28,8 @@ int compute_check_digit(int arr[], int size){
     if(cont3 % 10 == 0)
         //special case
         check_digit = 0;
-    
-    return check_digit;
+
+return check_digit;
 }
 
 int main(){
@@ -49,7 +42,7 @@ cout <<"-------------------------- \n";
 cout << "1. EAN-8 \n";
 cout << "2. UPC-A \n";
 cout << "3. EAN-13 \n";
-cout << "4. EAN-14 \n";
+cout << "4. ITF-14 \n";
 cout << "5. SSCC \n";
 cout << "-------------------------- \n";
 cout << "Chose your product code type: ";
@@ -78,7 +71,7 @@ size = 17;
 }
 int arr[size];
 
-cout << "Enter the first ";
+cout << "Enter first ";
 cout << size;
 cout << " digits of your product code: ";
 cout << endl;
@@ -86,9 +79,11 @@ cout << endl;
 for (int g = 0; g < size; g++) {
   cin >> arr[g];
 }
-
-cout << "";
-
+cout << "-------------------- \n";
+cout << "The check digit is ";
+cout << compute_check_digit(arr, size);
+cout << endl;
+cout << "The product code is ";
 //  print array elements
 for (int h = 0; h < size; h++) {
   cout << arr[h];
