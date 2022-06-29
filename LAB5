@@ -1,12 +1,20 @@
-//
-//  main.cpp
-//  LABworkJune29
 //  LAB.5
 //  Created by Leonardo Aureliano on 2022-06-29.
 #include <iostream>
 #include <fstream>
 
 using namespace std;
+
+//raplace the x = 18
+int NEXT_CHAPTER;
+int get_next_number(){
+    if(NEXT_CHAPTER == 0)
+    {
+        NEXT_CHAPTER = 18;
+        return NEXT_CHAPTER--;
+    }
+    return NEXT_CHAPTER--;
+}
 
 
 int main() {
@@ -46,10 +54,18 @@ int main() {
         inStream.get(anAnswear[couter])
         while(!inStream.eof{}){
             
-            if(anAnswear[counter] == "\n"){
+            if(anAnswear[counter - 1] =="\n"){
                 //provide the answear
                 cout << anAnswear << endl;
                 counter = 0;
+            else if(anAnswear[counter -1] == '#'){
+                //let us get the next number and it to the answer array
+                int x = 16;// you can replace putting this get_next_number(); Is setted in the top side.
+                
+                anAnswear[conter++] = x + '0';
+                }
+                
+            char
                 
             } else {
                 //continue reading the character
@@ -58,7 +74,6 @@ int main() {
             }
         }
     }
-    
     
     return 0;
 }
