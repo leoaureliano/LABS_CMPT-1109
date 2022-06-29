@@ -51,13 +51,14 @@ int main() {
 //
         int counter = 0;
         
-        inStream.get(anAnswear[couter])
-        while(!inStream.eof{}){
+        inStream.get(anAnswear[counter]);
+        while(!inStream.eof()){
             
-            if(anAnswear[counter - 1] =="\n"){
+            if(anAnswear[counter - 1] == '\n'){
                 //provide the answear
                 cout << anAnswear << endl;
                 counter = 0;
+            }
             else if(anAnswear[counter -1] == '#'){
                 //let us get the next number and it to the answer array
                 int x = 16;// you can replace putting this get_next_number(); Is setted in the top side.
@@ -65,7 +66,6 @@ int main() {
                 anAnswear[conter++] = x + '0';
                 }
                 
-            char
                 
             } else {
                 //continue reading the character
