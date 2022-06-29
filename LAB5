@@ -1,0 +1,64 @@
+//
+//  main.cpp
+//  LABworkJune29
+//  LAB.5
+//  Created by Leonardo Aureliano on 2022-06-29.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main() {
+    
+    ifstream inStream;
+    
+    inStream.open("answears.txt");
+    
+    if(inStream.fail()){
+        cout << "Everything is Ok. \n";
+    }
+    else {
+        cout << "Somethung is wrong!. \n";
+        string q;
+    }
+    while(true){
+        cout << "Plz, enter your next question \n";
+        string q;
+        
+        cin >> q;
+        
+        //provide the answears
+        //string answear;;
+        char anAnswear[100];
+        
+//        if(inStream >> answear)
+//            cout << answear << endl;
+//
+//        else
+//            inStream.close();
+//            inStream.open("answears.txt");
+//            inStream >> answear;
+//            cout << answear << endl;
+//
+        int counter = 0;
+        
+        inStream.get(anAnswear[couter])
+        while(!inStream.eof{}){
+            
+            if(anAnswear[counter] == "\n"){
+                //provide the answear
+                cout << anAnswear << endl;
+                counter = 0;
+                
+            } else {
+                //continue reading the character
+                //read the next char.
+                inStream.get(anAnswaer[counter++]);
+            }
+        }
+    }
+    
+    
+    return 0;
+}
