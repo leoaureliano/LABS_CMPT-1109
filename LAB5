@@ -7,13 +7,14 @@ using namespace std;
 
 //raplace the x = 18
 int NEXT_CHAPTER;
+   
 int get_next_number(){
-    if(NEXT_CHAPTER == 0)
-    {
-        NEXT_CHAPTER = 18;
+        if(NEXT_CHAPTER == 0)
+        {
+            NEXT_CHAPTER = 18;
+            return NEXT_CHAPTER--;
+        }
         return NEXT_CHAPTER--;
-    }
-    return NEXT_CHAPTER--;
 }
 
 
@@ -60,20 +61,22 @@ int main() {
                 counter = 0;
             }
             else if(anAnswear[counter -1] == '#'){
+                // seach for the char with the required expresion(string)
+                
                 //let us get the next number and it to the answer array
-                int x = 16;// you can replace putting this get_next_number(); Is setted in the top side.
+                int x = 18;// you can replace putting this get_next_number(); Is setted in the top side.
                 
-                anAnswear[conter++] = x + '0';
+                if( x>= 10) {//two digits
+                    anAnswear[counter++] = '1';
+                    anAnswear[counter++] = x + '0';
                 }
+                else //two digits
+                    anAnswear[counter++] = '0' + x;
                 
-                
-            } else {
-                //continue reading the character
-                //read the next char.
-                inStream.get(anAnswaer[counter++]);
             }
         }
     }
     
-    return 0;
+    return 1;
 }
+
