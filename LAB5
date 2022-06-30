@@ -64,14 +64,14 @@ int main() {
                 // seach for the char with the required expresion(string)
                 
                 //let us get the next number and it to the answer array
-                int x = 18;// you can replace putting this get_next_number(); Is setted in the top side.
+                get_next_number();// you can replace putting this get_next_number(); Is setted in the top side.
                 
-                if( x>= 10) {//two digits
+                if( get_next_number () >= 10) {//two digits
                     anAnswear[counter++] = '1';
-                    anAnswear[counter++] = x + '0';
+                    anAnswear[counter++] = get_next_number() + '0';
                 }
                 else //two digits
-                    anAnswear[counter++] = '0' + x;
+                    anAnswear[counter++] = '0' + get_next_number();
                 
             }
         }
