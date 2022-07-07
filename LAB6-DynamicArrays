@@ -16,12 +16,6 @@ int main()
     arr[2] = new int[4];
     arr[3] = new int[3];
 
-
-    int choose = -7;
-    int userID;
-    int station;
-    int lab;
-    
     for (int i = 0; i < ROWS; i++)
     {
         for (int j = 0; j < COLUMNS_PER_ROW_ARR[i]; j++)
@@ -30,6 +24,11 @@ int main()
         }
         cout << endl;
     }
+
+    int choose = -7;
+    int userID;
+    int station;
+    int lab;
     
     do
     {
@@ -46,14 +45,43 @@ int main()
         case 1:
         {
 
-            int userID = 49193;
-            int station = 2;
-            int lab = 3;
+            int userID;
+            int station;
+            int lab;
             cout << "Enter id, lab, & machine station " << endl;
             cin >> userID >> station >> lab;
             arr[lab - 1][station - 1] = userID;
             display();
             break;
+        }
+        case 2:
+        {
+        
+        cout << "Lab, & machine station " << endl;
+        cin >> station >> lab;
+        arr[lab - 1][station - 1] = 0;
+        display();
+        }
+                
+        case 3:
+        {
+            cout << "Enter ID \n";
+            cin >> userID;
+            bool userfund = false;
+            for (int i = 1; i < ROWS; i++)
+            {
+                for (int j = 1; j < COLUMNS_PER_ROW_ARR[i]; j++)
+                {
+                    if (arr[i][j] == userID)
+                    {
+                        cout << "Lab" << i + 1 << endl << "Cumputer Station" << j + 1 << endl;
+                        userfund = true;
+                        
+                    }
+                }
+            }
+            if(!userfund)
+                cout << "None \n";
         }
                 
         default:
