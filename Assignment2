@@ -1,4 +1,3 @@
-//  Created by Leonardo Aureliano on 2022-07-13.
 #include <iostream>
 using namespace std;
 
@@ -23,8 +22,7 @@ public:
         ok_count = 0;
         good_count = 0;
         great_count = 0;
-        
-        //todo
+
     }
     
     Movie(){
@@ -65,9 +63,9 @@ public:
           }
         //try to use the switch
         //todo
-};
+
     
-    string getName(){
+    string getname(){
         //todo
         return name;
     }
@@ -76,7 +74,7 @@ public:
         return MBAA;
     }
     
-    void setName(string Name){
+    void setname(string Name){
         this->name = name;
     }
     
@@ -84,7 +82,7 @@ public:
                 // todo
             }
     
-    double getAvarange(){
+    double getAvarage(){
         return (terrible_count * 1 +
                 bad_count * 2 +
                 ok_count * 3
@@ -92,8 +90,8 @@ public:
                 great_count * 5) / (terrible_count + bad_count + ok_count + good_count + great_count * 1.0);
     }
     
-    
 };
+
 
 int main(){
     
@@ -103,25 +101,23 @@ int main(){
     movie1.addRating(3); //Ok
     movie1.addRating(3); //OK
     movie1.addRating(5); //Great
-    cout << movie1.getname(); //300,
-    movie.getMBAA(); //R
-    cout << movie1.getAvarenge(); //X
+    cout << movie1.getname() << endl; //300,
+    cout << movie1.getMBAA() << endl; //R
+    cout << movie1.getAvarage() << endl; //2.6
     
     Movie movie2;
     movie2.setname("The GodFather");
-    movie.setMBAA("PG - 13");
+    movie2.setMBAA("PG - 13");
     movie2.addRating(1); //Terrible
     movie2.addRating(3); //OK
     movie2.addRating(5); //Great
     movie2.addRating(5); //Great
     movie2.addRating(5); //Great
     cout << movie2.getname() << endl;   //The GodFather
-    cout << movie.getMBAA() << endl; //PG-13
-    cout << movie2.getAvarenge() << endl; //3.8
+    cout << movie2.getMBAA() << endl; //PG-13
+    cout << movie2.getAvarage() << endl; //3.8
     
+    
+    cout << endl;
     return 0;
-}
-
-void addRating(Movie){
-    int addRating[5];
 }
