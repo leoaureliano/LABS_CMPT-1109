@@ -1,0 +1,127 @@
+//  Created by Leonardo Aureliano on 2022-07-13.
+#include <iostream>
+using namespace std;
+
+class Movie{
+private:
+    string name;
+    string MBAA;
+    //chalenger(replace for a arr or other thing)
+    int terrible_count;
+    int bad_count;
+    int ok_count;
+    int good_count;
+    int great_count;
+    
+public:
+    Movie(string name, string MBAA){
+        this ->name = name;
+        this ->MBAA = MBAA;
+        
+        terrible_count = 0;
+        bad_count = 0;
+        ok_count = 0;
+        good_count = 0;
+        great_count = 0;
+        
+        //todo
+    }
+    
+    Movie(){
+        
+        terrible_count = 0;
+        bad_count = 0;
+        ok_count = 0;
+        good_count = 0;
+        great_count = 0;
+        //todo
+    }
+
+    void addRating(int category){
+        //try to use the switch
+        if (category == 1){
+            terrible_count++;
+        }
+        else if (category == 2)
+               {
+            bad_count++;
+               }
+        else if (category == 3)
+              {
+            ok_count++;
+              }
+        else if (category == 4)
+              {
+            good_count++;
+              }
+        else if (category == 5)
+              {
+            great_count++;
+              }
+        else
+              {
+            cout << "Bad category. Plz try again" << endl;
+              }
+          }
+        //try to use the switch
+        //todo
+};
+    
+    string getName(){
+        //todo
+        return name;
+    }
+    
+    string getMBAA(){
+        return MBAA;
+    }
+    
+    void setName(string Name){
+        this->name = name;
+    }
+    
+    void setMBAA(string MBAA){
+                // todo
+            }
+    
+    double getAvarange(){
+        return (terrible_count * 1 +
+                bad_count * 2 +
+                ok_count * 3
+                + good_count * 4 +
+                great_count * 5) / (terrible_count + bad_count + ok_count + good_count + great_count * 1.0);
+    }
+    
+    
+};
+
+int main(){
+    
+    Movie movie1("300", "R");
+    movie1.addRating(1); //Terrible
+    movie1.addRating(1); //Terrible
+    movie1.addRating(3); //Ok
+    movie1.addRating(3); //OK
+    movie1.addRating(5); //Great
+    cout << movie1.getname(); //300,
+    movie.getMBAA(); //R
+    cout << movie1.getAvarenge(); //X
+    
+    Movie movie2;
+    movie2.setname("The GodFather");
+    movie.setMBAA("PG - 13");
+    movie2.addRating(1); //Terrible
+    movie2.addRating(3); //OK
+    movie2.addRating(5); //Great
+    movie2.addRating(5); //Great
+    movie2.addRating(5); //Great
+    cout << movie2.getname() << endl;   //The GodFather
+    cout << movie.getMBAA() << endl; //PG-13
+    cout << movie2.getAvarenge() << endl; //3.8
+    
+    return 0;
+}
+
+void addRating(Movie){
+    int addRating[5];
+}
