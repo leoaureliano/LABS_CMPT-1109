@@ -1,0 +1,43 @@
+//  main.cpp
+//  Assing2
+//
+//  Created by Leonardo Aureliano on 2022-07-20.
+
+#include <iostream>
+using namespace std;
+
+class rational{
+public:
+
+    int add;
+    int sub;
+    int div;
+    bool less;
+    
+    
+    int addition (int a, int b)
+    {
+      int r;
+      r=a+b;
+      return r;
+    };
+    
+    
+};
+
+
+int main() {
+    
+    int a;
+    int b;
+    cout << "a= ";
+    cin >> a;
+    cout << endl;
+    cout << "b= ";
+    cin >> b;
+    cout << endl;
+
+
+
+    return 0;
+}
