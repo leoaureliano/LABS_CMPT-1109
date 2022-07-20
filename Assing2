@@ -1,6 +1,5 @@
 //  main.cpp
 //  Assing2
-//
 //  Created by Leonardo Aureliano on 2022-07-20.
 
 #include <iostream>
@@ -8,34 +7,65 @@ using namespace std;
 
 class rational{
 public:
-
+    
     int add;
     int sub;
     int div;
-    bool less;
+    bool le;
+    int num;
+    int den;
+    
+    rational (){
+        result;
+    }
+    rational(int a, int b){
+        num=a;
+        den=b;
+
+    }
     
     
-    int addition (int a, int b)
+    rational addition (rational x)
     {
-      int r;
-      r=a+b;
-      return r;
+      result.num=x.num+x.den;
+      return result;
     };
     
+    rational subtraction (rational x)
+    {
+        rational result;
+        rational.num=x.num-x.den;
+        return rational;
+    }
+    
+    rational division (rational x)
+    {
+        result.num=x.num/x.den;
+        return result;
+    }
+    
+    rational less (rational x)
+    {
+        result.num=x.num/x.den;
+        return result;
+    }
     
 };
 
 
 int main() {
     
-    int a;
-    int b;
-    cout << "a= ";
-    cin >> a;
+    rational a(6, 5);
+    rational b(3, 4);
+
+    
+    rational tmp =  a.addition(b);
     cout << endl;
-    cout << "b= ";
-    cin >> b;
+    rational sub = a.subtraction(b);
     cout << endl;
+    rational divs = a.division(b);
+    
+
 
 
 
