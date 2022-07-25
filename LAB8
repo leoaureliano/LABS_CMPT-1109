@@ -17,65 +17,70 @@ private:
 //    int good_count;
 //    int great_count;
     
-    int arr[5];
+    int *arr;
     
 public:
     Movie(string name, string MBAA){
         this ->name = name;
         this ->MBAA = MBAA;
         
-        terrible_count = 0;
-        bad_count = 0;
-        ok_count = 0;
-        good_count = 0;
-        great_count = 0;
-        arr[0] = 0
-        arr[1] = 0;
-        arr[2] = 0;
-        arr[3] = 0;
-        arr[4] = 0;
-        arr[5] = 0;
+//
+//        terrible_count = 0;
+//        bad_count = 0;
+//        ok_count = 0;
+//        good_count = 0;
+//        great_count = 0;
+        arr = new int[5];
+        for (int i = 0; i < 5; i++)
+                {
+                    arr[i] = 0;
+                }
 
     }
     
     Movie(){
         
-        terrible_count = 0;
-        bad_count = 0;
-        ok_count = 0;
-        good_count = 0;
-        great_count = 0;
+        arr = new int[5];
+        for(int i = 0; i < 5; i++){
+            arr[i] = 0;
+        }
+        
+//        terrible_count = 0;
+//        bad_count = 0;
+//        ok_count = 0;
+//        good_count = 0;
+//        great_count = 0;
         //todo
     }
 
     void addRating(int category){
-        switch(category){
-            case 1:
-                terrible_count++;
-                break;
-
-            case 2:
-                bad_count++;
-                break;
-                
-            case 3:
-                ok_count++;
-                break;
-
-            case 4:
-                good_count++;
-                break;
-                
-            case 5:
-                great_count++;
-                break;
-
-                
-            default:
-                cout << "Bad category. Plz try again" << endl;
-                break;
-        }
+//        switch(category){
+//            case 1:
+//                terrible_count++;
+//                break;
 //
+//            case 2:
+//                bad_count++;
+//                break;
+//
+//            case 3:
+//                ok_count++;
+//                break;
+//
+//            case 4:
+//                good_count++;
+//                break;
+//
+//            case 5:
+//                great_count++;
+//                break;
+//
+//
+//            default:
+//                cout << "Bad category. Plz try again" << endl;
+//                break;
+//        }
+////
 //        if (category == 1){
 //            terrible_count++;
 //        }
@@ -99,19 +104,18 @@ public:
 //              {
 //            cout << "Bad category. Plz try again" << endl;
 //
-        if (category < 1 || category 5)
+        if (category < 1 || category > 5)
         {
-            cout << "bad";
+            cout << "Bad category. Plz try again" << endl;
         }
         else
          arr[category - 1]++;
         
     }
-          }
+};
         
     
     string getname(){
-        //todo
         return name;
     }
     
@@ -119,26 +123,56 @@ public:
         return MBAA;
     }
     
-    void setname(string Name){
+    void setname(string name){
         this->name = name;
     }
     
     void setMBAA(string MBAA){
-                // todo
+        this->MBAA = MBAA;
             }
     
     double getAvarage(){
-        return (terrible_count * 1 +
-                bad_count * 2 +
-                ok_count * 3
-                + good_count * 4 +
-                great_count * 5) / (terrible_count + bad_count + ok_count + good_count + great_count * 1.0);
+//        return (terrible_count * 1 +
+//                bad_count * 2 +
+//                ok_count * 3
+//                + good_count * 4 +
+//                great_count * 5) / (terrible_count + bad_count + ok_count + good_count + great_count * 1.0);
+              int sum = 0;
+              int sum2 = 0;
+              for( int i = 0 ; i < 5 ; i++){
+                  sum += arr[i] * (i+1);
+                  sum2 += arr[i];
+              }
+              return sum / (sum2 *1.0);
+        
     }
+
+//copy constructor
+Movie(Movie &y){
+    // deep copy
+    this->arr = new int[5];
+    for(int i = 0; i < 5; i++){
+        this->arr[i] = y.arr[i];
+    }
+
+//Operator Equal Member fuction
+void operator = (Movie X){ //x(Movie)
+    //deep copy
+    for(int i = 0; i < 5;i++)
+        this->arr[i] = x.arr[i];
+}
+~Movie(){
+    delete[]arr;
+}
     
 };
 
 
 int main(){
+    
+    Movie *arr;
+    arr = nem Movie[2]
+    arr[0] = new Movie("200", "L") //default
     
     Movie movie1("300", "R");
     movie1.addRating(1); //Terrible
@@ -162,7 +196,10 @@ int main(){
     cout << movie2.getMBAA() << endl; //PG-13
     cout << movie2.getAvarage() << endl; //3.8
     
-    
+    movie1 = movie2; //movie1.operator=(movie2);
+    movie1.addRating(5);
+    cout << movie1.getAvarenge() << endl;//3.8;
+    cour << movie2.getAvarenge() << endl;//4;
     cout << endl;
     return 0;
 }
