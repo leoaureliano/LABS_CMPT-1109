@@ -1,0 +1,168 @@
+//
+//  main.cpp
+//  Lab8
+//
+//  Created by Leonardo Aureliano on 2022-07-25.
+#include <iostream>
+using namespace std;
+
+class Movie{
+private:
+    string name;
+    string MBAA;
+    
+//    int terrible_count;
+//    int bad_count;
+//    int ok_count;
+//    int good_count;
+//    int great_count;
+    
+    int arr[5];
+    
+public:
+    Movie(string name, string MBAA){
+        this ->name = name;
+        this ->MBAA = MBAA;
+        
+        terrible_count = 0;
+        bad_count = 0;
+        ok_count = 0;
+        good_count = 0;
+        great_count = 0;
+        arr[0] = 0
+        arr[1] = 0;
+        arr[2] = 0;
+        arr[3] = 0;
+        arr[4] = 0;
+        arr[5] = 0;
+
+    }
+    
+    Movie(){
+        
+        terrible_count = 0;
+        bad_count = 0;
+        ok_count = 0;
+        good_count = 0;
+        great_count = 0;
+        //todo
+    }
+
+    void addRating(int category){
+        switch(category){
+            case 1:
+                terrible_count++;
+                break;
+
+            case 2:
+                bad_count++;
+                break;
+                
+            case 3:
+                ok_count++;
+                break;
+
+            case 4:
+                good_count++;
+                break;
+                
+            case 5:
+                great_count++;
+                break;
+
+                
+            default:
+                cout << "Bad category. Plz try again" << endl;
+                break;
+        }
+//
+//        if (category == 1){
+//            terrible_count++;
+//        }
+//        else if (category == 2)
+//               {
+//            bad_count++;
+//               }
+//        else if (category == 3)
+//              {
+//            ok_count++;
+//              }
+//        else if (category == 4)
+//              {
+//            good_count++;
+//              }
+//        else if (category == 5)
+//              {
+//            great_count++;
+//              }
+//        else
+//              {
+//            cout << "Bad category. Plz try again" << endl;
+//
+        if (category < 1 || category 5)
+        {
+            cout << "bad";
+        }
+        else
+         arr[category - 1]++;
+        
+    }
+          }
+        
+    
+    string getname(){
+        //todo
+        return name;
+    }
+    
+    string getMBAA(){
+        return MBAA;
+    }
+    
+    void setname(string Name){
+        this->name = name;
+    }
+    
+    void setMBAA(string MBAA){
+                // todo
+            }
+    
+    double getAvarage(){
+        return (terrible_count * 1 +
+                bad_count * 2 +
+                ok_count * 3
+                + good_count * 4 +
+                great_count * 5) / (terrible_count + bad_count + ok_count + good_count + great_count * 1.0);
+    }
+    
+};
+
+
+int main(){
+    
+    Movie movie1("300", "R");
+    movie1.addRating(1); //Terrible
+    movie1.addRating(1); //Terrible
+    movie1.addRating(3); //Ok
+    movie1.addRating(3); //OK
+    movie1.addRating(5); //Great
+    cout << movie1.getname() << endl; //300,
+    cout << movie1.getMBAA() << endl; //R
+    cout << movie1.getAvarage() << endl; //2.6
+    
+    Movie movie2;
+    movie2.setname("The GodFather");
+    movie2.setMBAA("PG - 13");
+    movie2.addRating(1); //Terrible
+    movie2.addRating(3); //OK
+    movie2.addRating(5); //Great
+    movie2.addRating(5); //Great
+    movie2.addRating(5); //Great
+    cout << movie2.getname() << endl;   //The GodFather
+    cout << movie2.getMBAA() << endl; //PG-13
+    cout << movie2.getAvarage() << endl; //3.8
+    
+    
+    cout << endl;
+    return 0;
+}
