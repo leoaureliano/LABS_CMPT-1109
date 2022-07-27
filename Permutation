@@ -6,22 +6,22 @@
 using namespace std;
 
 int fact(int n){
-    int result = 1;
-    for (int i = 1; 1<=n; i++){
-        result *= 1;
-    }
 
-return result;
+    if(n == 1 || n == 0)
+        return 1; //Basic stap
+    else
+        return n * (fact(n-1));
     
+
 }
     
 int main() {
     
-    
-    cout << fact(0);
-    cout << fact(1);
-    cout << fact(2);
-    cout << fact(3);
+    cout << fact(0) << endl;
+    cout << fact(1) << endl;
+    cout << fact(2) << endl;
+    cout << fact(3) << endl;
+    cout << fact(4) << endl;
     
     return 0;
 }
