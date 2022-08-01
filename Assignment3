@@ -1,4 +1,3 @@
-//
 //  main.cpp
 //  AssingAgust
 //
@@ -10,50 +9,53 @@ using namespace std;
 class Polynomial
 {
 private:
-    int *arr;
-    int x, y;
+    double *array;
+    int x;
     
 public:
     
     Polynomial();//constructor = 0
+    Polynomial(double array[], int x);
+    Polynomial(Polynomial&);//copy constructor
+    Polynomial(double);//constructor
+    ~Polynomial(){delete array;} //Destructor
     
-    
-    //copy constructor
-    Polynomial(Polynomial &x){
-        // deep copy
-        this->arr = new int[5];
-        for(int i = 0; i < 5; i++){
-            this->arr[i] = x.arr[i];
-        }
-    
-//    Multiplication(); //start to zero
-//    Multiplication (int x, int y);
-//    int multiply() {return x * y;}
-//
-//
-    double multiplication()
-        {
-            int sum = 0;
-            int sum2 = 0;
-            for( int i = 0 ; i < arr ; i++){
-                sum += arr[i] * (i+1);
-                sum2 += arr[i];
-            }
-            return sum * (sum2 *1.0);
-           
-        }
-        
-    ~Polynomial(); //Destructor
-    
-    
+    Polynomial operator-(Polynomial p) const;
+    Polynomial operator*(Polynomial p) const;
 };
+
+//Default constructor, to start everything with 0.
+Polynomial::Polynomial() {
+    x = 0;
+    array = new double[x * x * x + x + 1];//dynamic array with the required value
+    array[0] = 0;
+}
+
+Polynomial::Polynomial(double array[], int nterms){
+    x = nterms;
+    array = new double[x]; //array to hold coefficient values
+    for(int i = 0; i < x; i++)
+        array[i] = array[i];
+}
+Polynomial::Polynomial(Polynomial&){
+
+}
+
+Polynomial add(const Polynomial& other) const
+{
+    return Vector2(array +other.array[array +1])
+}
+
+
+Polynomial operator+ (const Polynomial& other) const{
+    return add(other);
+}
 
 
 
 int main() {
-    Polynomial poly1(5, 1);
-    cout << poly1.getAverage() << endl;
     
+    Polynomial numbers(2);
     
     return 0;
 }
