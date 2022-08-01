@@ -1,0 +1,59 @@
+//
+//  main.cpp
+//  AssingAgust
+//
+//  Created by Leonardo Aureliano on 2022-07-30.
+
+#include <iostream>
+using namespace std;
+
+class Polynomial
+{
+private:
+    int *arr;
+    int x, y;
+    
+public:
+    
+    Polynomial();//constructor = 0
+    
+    
+    //copy constructor
+    Polynomial(Polynomial &x){
+        // deep copy
+        this->arr = new int[5];
+        for(int i = 0; i < 5; i++){
+            this->arr[i] = x.arr[i];
+        }
+    
+//    Multiplication(); //start to zero
+//    Multiplication (int x, int y);
+//    int multiply() {return x * y;}
+//
+//
+    double multiplication()
+        {
+            int sum = 0;
+            int sum2 = 0;
+            for( int i = 0 ; i < arr ; i++){
+                sum += arr[i] * (i+1);
+                sum2 += arr[i];
+            }
+            return sum * (sum2 *1.0);
+           
+        }
+        
+    ~Polynomial(); //Destructor
+    
+    
+};
+
+
+
+int main() {
+    Polynomial poly1(5, 1);
+    cout << poly1.getAverage() << endl;
+    
+    
+    return 0;
+}
