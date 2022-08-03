@@ -4,58 +4,63 @@
 //  Created by Leonardo Aureliano on 2022-07-30.
 
 #include <iostream>
+
 using namespace std;
+
 
 class Polynomial
 {
-private:
-    double *array;
-    int x;
-    
 public:
     
+    double *array;
+    int x;
     Polynomial();//constructor = 0
     Polynomial(double array[], int x);
     Polynomial(Polynomial&);//copy constructor
     Polynomial(double);//constructor
     ~Polynomial(){delete array;} //Destructor
     
-    Polynomial operator-(Polynomial p) const;
-    Polynomial operator*(Polynomial p) const;
+    Polynomial operator+(Polynomial p) const;//Sumation of 2 polynomios
+    Polynomial operator-(Polynomial p) const;//Subration of 2 polynomios
+    Polynomial operator*(Polynomial p) const;//Multiplication btween 2 polynomios
 };
 
 //Default constructor, to start everything with 0.
 Polynomial::Polynomial() {
     x = 0;
-    array = new double[x * x * x + x + 1];//dynamic array with the required value
+    array = new double[x + 1];//dynamic array with the required value
     array[0] = 0;
 }
 
 Polynomial::Polynomial(double array[], int nterms){
     x = nterms;
+    //Creating a dynamic array
     array = new double[x]; //array to hold coefficient values
     for(int i = 0; i < x; i++)
         array[i] = array[i];
 }
-Polynomial::Polynomial(Polynomial&){
 
-}
-
-Polynomial add(const Polynomial& other) const
-{
-    return Vector2(array +other.array[array +1])
-}
-
-
-Polynomial operator+ (const Polynomial& other) const{
-    return add(other);
-}
+//
+//Polynomial add(const Polynomial& other) const
+//{
+//    return Polynomial(array +other.array[array +1])
+//}
+//
+//
+//Polynomial operator+ (const Polynomial& other) const{
+//    return add(other);
+//}
 
 
 
 int main() {
     
-    Polynomial numbers(2);
+    Polynomial number1(2);
+    Polynomial number2(1);
+    Polynomial number3(3);
+    Polynomial number4(4);
     
-    return 0;
+    cout << Polynomial result1 = number.add(number.2);
+    
+    return 2321;
 }
